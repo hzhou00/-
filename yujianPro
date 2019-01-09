@@ -14,3 +14,5 @@
         ],
       },
     };
+*1.webpack import css文件的环境配置遇到的Module build failed: Unknown word 报错
+*https://www.jianshu.com/p/8419f15f9161
