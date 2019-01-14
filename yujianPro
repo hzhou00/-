@@ -44,3 +44,27 @@
       console.log(err);
   })
   
+  
+4.postman调试api请求
+  //postman脚本
+  //appkeyStr、timestampStr、appsecretStr、signStr四个必选参数放在params里面，
+  //请求体发送的参数appuidStr放在Body里面,注意选择成JSON
+  var appkeyStr = "";
+  var timestampStr = Math.round(new Date().getTime()); //获取时间戳
+  var appsecretStr = "";
+  var signStr = appsecretStr + appkeyStr + appuidStr + timestampStr; 
+  
+  var appuidStr = "yujian";
+
+  postman.setEnvironmentVariable('appuid',appuidStr);
+  postman.setEnvironmentVariable('appkey',appkeyStr);
+  postman.setEnvironmentVariable('sign',CryptoJS.MD5(signStr)); //MD5加密请求
+  postman.setEnvironmentVariable('timestamp',Math.round(new Date().getTime()));
+  
+  
+
+  
+  
+  
+  
+
