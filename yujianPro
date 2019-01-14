@@ -14,8 +14,33 @@
         ],
       },
     };
-*1.webpack import css文件的环境配置遇到的Module build failed: Unknown word 报错
-*https://www.jianshu.com/p/8419f15f9161
+1.webpack import css文件的环境配置遇到的Module build failed: Unknown word 报错
+  *https://www.jianshu.com/p/8419f15f9161
 
-*2.vue项目中使用md5加密
-*https://blog.csdn.net/skyblacktoday/article/details/80255348
+2.vue项目中使用md5加密
+  *https://blog.csdn.net/skyblacktoday/article/details/80255348
+
+3.Axios请求中的data和params
+  *在post请求中如果遇到一些必要请求参数的，不能放在data请求体里面的，把参数放在params里面
+   this.$axios({
+      method: "post",
+      headers: { "content-type": "application/json" },  //局部更改
+      url: `/kujiale/v2/login`,
+      data:{ //请求参数 在请求体的参数会以json格式发送请求
+          name : "yujian",                       
+      },
+      params:{ //必选参数 会以 ? 拼接在api请求后面
+          appkey: `${appkeyStr}`,
+          appsecret: `${appsecretStr}`,
+          timestamp: `${timestampStr}`,
+          appuid : `${appuidStr}`,
+          sign : `${signStr}`
+      }
+  })
+  .then((res) => {
+      console.log(res);
+  })
+  .catch((err)=>{
+      console.log(err);
+  })
+  
