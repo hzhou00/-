@@ -1,0 +1,6 @@
+
+// 1.CSS 强制不换行，溢出隐藏显示省略号
+
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
