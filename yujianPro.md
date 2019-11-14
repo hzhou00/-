@@ -1,10 +1,12 @@
-//项目接触
-一、问题
-*搭建vue 2.9.3项目中引入.css报错
-*解决办法：
-  1. npm install css css-loader --save
-  2.在build文件下的webpack.base.conf.js中加入以下代码
-    module.exports = {
+## 项目接触
+### 一、问题
+> 搭建vue 2.9.3项目中引入.css报错
+
+> 解决办法：
+
+ 1.  ```npm install css css-loader --save```
+ 2.在build文件下的webpack.base.conf.js中加入以下代码
+    ```module.exports = {
       module: {
         rules: [
           {
@@ -13,7 +15,8 @@
           },
         ],
       },
-    };
+    };```
+    
 1.webpack import css文件的环境配置遇到的Module build failed: Unknown word 报错
   *https://www.jianshu.com/p/8419f15f9161
 
